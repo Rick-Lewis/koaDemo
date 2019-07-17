@@ -1,0 +1,12 @@
+{
+  "presets": [
+    [
+      "@babel/env",
+      {
+        "modules": false
+      },
+      "@babel/polyfill"
+    ]
+  ],
+  "plugins": ["@babel/transform-async-to-generator", "@babel/plugin-syntax-dynamic-import"]
+}
