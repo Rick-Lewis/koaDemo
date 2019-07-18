@@ -2,19 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dcd36b4e-1510-4167-bdee-fa888532d8f8" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/Button.vue" afterPath="$PROJECT_DIR$/client/components/Button.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/Drawer.vue" afterPath="$PROJECT_DIR$/client/components/Drawer.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/Input.vue" afterPath="$PROJECT_DIR$/client/components/Input.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/components/Navigator.vue" afterPath="$PROJECT_DIR$/client/components/Navigator.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/module/login/Login.vue" afterPath="$PROJECT_DIR$/client/module/login/Login.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/script/0.bundle.js" afterPath="$PROJECT_DIR$/dist/script/0.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/script/0.bundle.js.map" afterPath="$PROJECT_DIR$/dist/script/0.bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/script/client.bundle.js" afterPath="$PROJECT_DIR$/dist/script/client.bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/script/client.bundle.js.map" afterPath="$PROJECT_DIR$/dist/script/client.bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/vue-ssr-client-manifest.json" afterPath="$PROJECT_DIR$/dist/vue-ssr-client-manifest.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dist/vue-ssr-server-bundle.json" afterPath="$PROJECT_DIR$/dist/vue-ssr-server-bundle.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/logs/app-err-0.log" afterPath="$PROJECT_DIR$/server/logs/app-err-0.log" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/logs/app-out-0.log" afterPath="$PROJECT_DIR$/server/logs/app-out-0.log" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -568,9 +555,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="npm.build" />
-        <item index="1" class="java.lang.String" itemvalue="npm.start" />
-        <item index="2" class="java.lang.String" itemvalue="npm.shutdown" />
+        <item index="0" class="java.lang.String" itemvalue="npm.shutdown" />
+        <item index="1" class="java.lang.String" itemvalue="npm.build" />
+        <item index="2" class="java.lang.String" itemvalue="npm.start" />
         <item index="3" class="java.lang.String" itemvalue="npm.clean" />
         <item index="4" class="java.lang.String" itemvalue="npm.delete" />
       </list>
@@ -595,12 +582,12 @@
       <workItem from="1560175037394" duration="88842000" />
       <workItem from="1563286962917" duration="6459000" />
       <workItem from="1563380621466" duration="285000" />
-      <workItem from="1563457127361" duration="3535000" />
+      <workItem from="1563457127361" duration="3653000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="150145000" />
+    <option name="totallyTimeSpent" value="150263000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
