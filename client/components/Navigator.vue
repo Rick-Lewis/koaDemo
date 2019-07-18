@@ -5,7 +5,7 @@
     <header class="navigator-container">
         <div class="logo-container">
             <img :src="logoUrl"/>
-            <span>团饭饭团</span>
+            <span>迎吧心</span>
         </div>
         <nav>
             <ul>

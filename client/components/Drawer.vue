@@ -32,19 +32,19 @@
     .drawer-container {
         position: fixed;
         top: 0;
-        right: 0;
-        width: 0;
+        right: -48rem;
+        width: 48rem;
         height: 100vh;
         padding-top: $navHeight;
         box-sizing: border-box;
-        background-color: red;
-        -webkit-transition: width .5s;
-        -moz-transition: width .5s;
-        -ms-transition: width .5s;
-        -o-transition: width .5s;
-        transition: width .5s;
+        background-color: rgba(0,0,0,.5);
+        -webkit-transition: right .5s;
+        -moz-transition: right .5s;
+        -ms-transition: right .5s;
+        -o-transition: right .5s;
+        transition: right .5s;
         .hook-container {
-            width: 4rem;
+            width: 2rem;
             height: 4rem;
             position: absolute;
             top: 0;
@@ -58,6 +58,6 @@
         }
     }
     .extend-class{
-        width: 48rem;
+        right: 0;
     }
 </style>

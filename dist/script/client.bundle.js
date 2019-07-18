@@ -114,6 +114,7 @@
 /******/ 							var errorType = event && (event.type === 'load' ? 'missing' : event.type);
 /******/ 							var realSrc = event && event.target && event.target.src;
 /******/ 							error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 							error.name = 'ChunkLoadError';
 /******/ 							error.type = errorType;
 /******/ 							error.request = realSrc;
 /******/ 							chunk[1](error);
@@ -1814,7 +1815,7 @@ module.exports = function spread(callback) {
 
 var bind = __webpack_require__(/*! ./helpers/bind */ "./node_modules/axios/lib/helpers/bind.js");
 
-var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/axios/node_modules/is-buffer/index.js");
+var isBuffer = __webpack_require__(/*! is-buffer */ "./node_modules/is-buffer/index.js");
 /*global toString:true*/
 // utils is a library of generic helper functions non-specific to axios
 
@@ -2172,25 +2173,6 @@ module.exports = {
 
 /***/ }),
 
-/***/ "./node_modules/axios/node_modules/is-buffer/index.js":
-/*!************************************************************!*\
-  !*** ./node_modules/axios/node_modules/is-buffer/index.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-/*!
- * Determine if an object is a Buffer
- *
- * @author   Feross Aboukhadijeh <https://feross.org>
- * @license  MIT
- */
-module.exports = function isBuffer(obj) {
-  return obj != null && obj.constructor != null && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj);
-};
-
-/***/ }),
-
 /***/ "./node_modules/babel-loader/lib/index.js!./node_modules/vue-loader/lib/index.js?!./client/App.vue?vue&type=script&lang=js&":
 /*!***********************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib!./node_modules/vue-loader/lib??vue-loader-options!./client/App.vue?vue&type=script&lang=js& ***!
@@ -2323,6 +2305,25 @@ function toComment(sourceMap) {
   var data = 'sourceMappingURL=data:application/json;charset=utf-8;base64,' + base64;
   return '/*# ' + data + ' */';
 }
+
+/***/ }),
+
+/***/ "./node_modules/is-buffer/index.js":
+/*!*****************************************!*\
+  !*** ./node_modules/is-buffer/index.js ***!
+  \*****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/*!
+ * Determine if an object is a Buffer
+ *
+ * @author   Feross Aboukhadijeh <https://feross.org>
+ * @license  MIT
+ */
+module.exports = function isBuffer(obj) {
+  return obj != null && obj.constructor != null && typeof obj.constructor.isBuffer === 'function' && obj.constructor.isBuffer(obj);
+};
 
 /***/ }),
 
@@ -3009,7 +3010,7 @@ function normalizeComponent (
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /*!
-  * vue-router v3.0.6
+  * vue-router v3.0.7
   * (c) 2019 Evan You
   * @license MIT
   */
@@ -4376,10 +4377,8 @@ function createMatcher(routes, router) {
         }
       }
 
-      if (record) {
-        location.path = fillParams(record.path, location.params, "named route \"" + name + "\"");
-        return _createRoute(record, location, redirectedFrom);
-      }
+      location.path = fillParams(record.path, location.params, "named route \"" + name + "\"");
+      return _createRoute(record, location, redirectedFrom);
     } else if (location.path) {
       location.params = {};
 
@@ -4529,9 +4528,14 @@ var positionStore = Object.create(null);
 function setupScroll() {
   // Fix for #1585 for Firefox
   // Fix for #2195 Add optional third attribute to workaround a bug in safari https://bugs.webkit.org/show_bug.cgi?id=182678
+  // Fix for #2774 Support for apps loaded from Windows file shares not mapped to network drives: replaced location.origin with
+  // window.location.protocol + '//' + window.location.host
+  // location.host contains the port and location.hostname doesn't
+  var protocolAndPath = window.location.protocol + '//' + window.location.host;
+  var absolutePath = window.location.href.replace(protocolAndPath, '');
   window.history.replaceState({
     key: getStateKey()
-  }, '', window.location.href.replace(window.location.origin, ''));
+  }, '', absolutePath);
   window.addEventListener('popstate', function (e) {
     saveScrollPosition();
 
@@ -5090,8 +5094,6 @@ function extractEnterGuards(activated, cbs, isValid) {
 function bindEnterGuard(guard, match, key, cbs, isValid) {
   return function routeEnterGuard(to, from, next) {
     return guard(to, from, function (cb) {
-      next(cb);
-
       if (typeof cb === 'function') {
         cbs.push(function () {
           // #750
@@ -5102,6 +5104,8 @@ function bindEnterGuard(guard, match, key, cbs, isValid) {
           poll(cb, match.instances, key, isValid);
         });
       }
+
+      next(cb);
     });
   };
 }
@@ -5635,7 +5639,7 @@ function createHref(base, fullPath, mode) {
 }
 
 VueRouter.install = install;
-VueRouter.version = '3.0.6';
+VueRouter.version = '3.0.7';
 
 if (inBrowser && window.Vue) {
   window.Vue.use(VueRouter);

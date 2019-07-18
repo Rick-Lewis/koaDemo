@@ -27,7 +27,7 @@
         text-shadow: 0 -1px 0 rgba(0,0,0,0.12);
         -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);
         box-shadow: 0 2px 0 rgba(0,0,0,0.045);
-        height: 3.2rem;
+        height: 4.2rem;
         padding: 0 1.5rem;
         border-radius: .4rem;
         line-height:1.5;

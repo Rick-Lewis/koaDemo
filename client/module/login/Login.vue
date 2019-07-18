@@ -4,14 +4,16 @@
 <template>
     <div class="login-container">
         <div class="title-container">
-            <h3>团饭饭团</h3>
+            <span>迎吧心</span>
         </div>
-        <div class="input-container">
-            <my-input></my-input>
-            <my-input></my-input>
+        <div class="my-input-container">
+            <my-input placeholder="你的邮箱/手机号"></my-input>
+            <my-input placeholder="您的密码" style="margin-top: 1rem;"></my-input>
         </div>
-        <div class="btn-container">
+        <div class="forget-password-container"><a href="#">忘记密码</a></div>
+        <div class="my-btn-container">
             <my-button v-on:my-click="handleLoginClick">登陆</my-button>
+            <div class="register-container">还没有账号？<a href="#">马上注册</a></div>
         </div>
     </div>
 </template>
@@ -44,11 +46,38 @@
 
 <style lang="scss">
     .login-container{
+        width: 37rem;
+        background-color: #fff;
+        margin: 0 auto;
         position: relative;
         top: 50%;
         transform: translateY(-50%);
+        border-radius: 5px;
         .title-container{
             text-align: center;
+            padding: 1.5rem 0;
+            font-size: 2rem;
+        }
+        .my-input-container{
+            padding: 0 2.5rem;
+        }
+        .forget-password-container{
+            padding: .8rem 2.5rem 0 2.5rem;
+            text-align: right;
+            a{
+                text-decoration: none;
+            }
+        }
+        .my-btn-container{
+            padding: 1.2rem 2.5rem 2rem 2.5rem;
+            .register-container{
+                font-size: 12px;
+                text-align: center;
+                padding-top: .5rem;
+            }
+        }
+        a{
+            font-size: 12px;
         }
     }
 </style>

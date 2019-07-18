@@ -917,7 +917,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Input'
+  name: 'Input',
+  props: {
+    placeholder: String
+  }
 });
 
 /***/ }),
@@ -1076,6 +1079,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -1111,7 +1116,7 @@ __webpack_require__.r(__webpack_exports__);
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".drawer-container {\n  position: fixed;\n  top: 0;\n  right: 0;\n  width: 0;\n  height: 100vh;\n  padding-top: 6.4rem;\n  box-sizing: border-box;\n  background-color: red;\n  -webkit-transition: width .5s;\n  -moz-transition: width .5s;\n  -ms-transition: width .5s;\n  -o-transition: width .5s;\n  transition: width .5s;\n}\n.drawer-container .hook-container {\n    width: 4rem;\n    height: 4rem;\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: -2rem;\n    margin: auto 0;\n    background-color: #000;\n}\n.drawer-container .content-container {\n    height: 100%;\n}\n.extend-class {\n  width: 48rem;\n}\n", ""]);
+exports.push([module.i, ".drawer-container {\n  position: fixed;\n  top: 0;\n  right: -48rem;\n  width: 48rem;\n  height: 100vh;\n  padding-top: 6.4rem;\n  box-sizing: border-box;\n  background-color: rgba(0, 0, 0, 0.5);\n  -webkit-transition: right .5s;\n  -moz-transition: right .5s;\n  -ms-transition: right .5s;\n  -o-transition: right .5s;\n  transition: right .5s;\n}\n.drawer-container .hook-container {\n    width: 2rem;\n    height: 4rem;\n    position: absolute;\n    top: 0;\n    bottom: 0;\n    left: -2rem;\n    margin: auto 0;\n    background-color: #000;\n}\n.drawer-container .content-container {\n    height: 100%;\n}\n.extend-class {\n  right: 0;\n}\n", ""]);
 
 
 
@@ -1126,7 +1131,7 @@ exports.push([module.i, ".drawer-container {\n  position: fixed;\n  top: 0;\n  r
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".input-container input {\n  font-size: 1.6rem;\n  padding: .8rem 1rem;\n  line-height: 1.5;\n  border: 1px solid #ced4da;\n  background-color: #fff;\n  border-radius: .3rem;\n  display: block;\n  width: 100%;\n  box-sizing: border-box;\n  outline: none;\n}\n", ""]);
+exports.push([module.i, ".input-container {\n  font-size: 1.6rem;\n  padding: .8rem 1rem;\n  line-height: 1.5;\n  border: 1px solid #ced4da;\n  background-color: #fff;\n  border-radius: .4rem;\n  display: block;\n  width: 100%;\n  box-sizing: border-box;\n  outline: none;\n}\n", ""]);
 
 
 
@@ -1171,7 +1176,7 @@ exports.push([module.i, ".home-container {\n  height: 100vh;\n}\n.home-container
 
 exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, ".login-container {\n  position: relative;\n  top: 50%;\n  transform: translateY(-50%);\n}\n.login-container .title-container {\n    text-align: center;\n}\n", ""]);
+exports.push([module.i, ".login-container {\n  width: 37rem;\n  background-color: #fff;\n  margin: 0 auto;\n  position: relative;\n  top: 50%;\n  transform: translateY(-50%);\n  border-radius: 5px;\n}\n.login-container .title-container {\n    text-align: center;\n    padding: 1.5rem 0;\n    font-size: 2rem;\n}\n.login-container .my-input-container {\n    padding: 0 2.5rem;\n}\n.login-container .forget-password-container {\n    padding: .8rem 2.5rem 0 2.5rem;\n    text-align: right;\n}\n.login-container .forget-password-container a {\n      text-decoration: none;\n}\n.login-container .my-btn-container {\n    padding: 1.2rem 2.5rem 2rem 2.5rem;\n}\n.login-container .my-btn-container .register-container {\n      font-size: 12px;\n      text-align: center;\n      padding-top: .5rem;\n}\n.login-container a {\n    font-size: 12px;\n}\n", ""]);
 
 
 
@@ -1186,7 +1191,7 @@ exports.push([module.i, ".login-container {\n  position: relative;\n  top: 50%;\
 
 exports = module.exports = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js")(false);
 // Module
-exports.push([module.i, "\n.button-container {\n    color: #fff;\n    background-color: #1890ff;\n    border-color: #1890ff;\n    text-shadow: 0 -1px 0 rgba(0,0,0,0.12);\n    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);\n    box-shadow: 0 2px 0 rgba(0,0,0,0.045);\n    height: 3.2rem;\n    padding: 0 1.5rem;\n    border-radius: .4rem;\n    line-height:1.5;\n    position: relative;\n    display: inline-block;\n    white-space: nowrap;\n    text-align: center;\n    background-image: none;\n    width: 100%;\n    outline: none;\n    font-size: 1.6rem;\n}\n", ""]);
+exports.push([module.i, "\n.button-container {\n    color: #fff;\n    background-color: #1890ff;\n    border-color: #1890ff;\n    text-shadow: 0 -1px 0 rgba(0,0,0,0.12);\n    -webkit-box-shadow: 0 2px 0 rgba(0,0,0,0.045);\n    box-shadow: 0 2px 0 rgba(0,0,0,0.045);\n    height: 4.2rem;\n    padding: 0 1.5rem;\n    border-radius: .4rem;\n    line-height:1.5;\n    position: relative;\n    display: inline-block;\n    white-space: nowrap;\n    text-align: center;\n    background-image: none;\n    width: 100%;\n    outline: none;\n    font-size: 1.6rem;\n}\n", ""]);
 
 
 
@@ -1362,7 +1367,10 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("input", { staticClass: "input-container" })
+  return _c("input", {
+    staticClass: "input-container",
+    attrs: { placeholder: _vm.placeholder }
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -1390,7 +1398,7 @@ var render = function() {
     _c("div", { staticClass: "logo-container" }, [
       _c("img", { attrs: { src: _vm.logoUrl } }),
       _vm._v(" "),
-      _c("span", [_vm._v("团饭饭团")])
+      _c("span", [_vm._v("迎吧心")])
     ]),
     _vm._v(" "),
     _c("nav", [
@@ -1500,18 +1508,29 @@ var render = function() {
     _vm._v(" "),
     _c(
       "div",
-      { staticClass: "input-container" },
-      [_c("my-input"), _vm._v(" "), _c("my-input")],
+      { staticClass: "my-input-container" },
+      [
+        _c("my-input", { attrs: { placeholder: "你的邮箱/手机号" } }),
+        _vm._v(" "),
+        _c("my-input", {
+          staticStyle: { "margin-top": "1rem" },
+          attrs: { placeholder: "您的密码" }
+        })
+      ],
       1
     ),
     _vm._v(" "),
+    _vm._m(1),
+    _vm._v(" "),
     _c(
       "div",
-      { staticClass: "btn-container" },
+      { staticClass: "my-btn-container" },
       [
         _c("my-button", { on: { "my-click": _vm.handleLoginClick } }, [
           _vm._v("登陆")
-        ])
+        ]),
+        _vm._v(" "),
+        _vm._m(2)
       ],
       1
     )
@@ -1523,7 +1542,24 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "title-container" }, [
-      _c("h3", [_vm._v("团饭饭团")])
+      _c("span", [_vm._v("迎吧心")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "forget-password-container" }, [
+      _c("a", { attrs: { href: "#" } }, [_vm._v("忘记密码")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "register-container" }, [
+      _vm._v("还没有账号？"),
+      _c("a", { attrs: { href: "#" } }, [_vm._v("马上注册")])
     ])
   }
 ]
