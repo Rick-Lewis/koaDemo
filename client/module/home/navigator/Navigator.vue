@@ -5,7 +5,7 @@
     <header class="navigator-container">
         <div class="logo-container">
             <img :src="logoUrl"/>
-            <span>迎吧心</span>
+            <span>尤为</span>
         </div>
         <nav>
             <ul>

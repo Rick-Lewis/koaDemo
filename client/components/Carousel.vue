@@ -3,7 +3,7 @@
 */
 <template>
     <div class="carousel-container">
-        <slot></slot>
+        <slot />
     </div>
 </template>
 
@@ -14,7 +14,5 @@
 </script>
 
 <style>
-    .carousel-container{
-
-    }
+    /* .carousel-container{} */
 </style>

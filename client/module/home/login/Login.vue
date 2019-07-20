@@ -4,7 +4,7 @@
 <template>
     <div class="login-container">
         <div class="title-container">
-            <span>迎吧心</span>
+            <span>尤为</span>
         </div>
         <div class="my-input-container">
             <my-input placeholder="你的邮箱/手机号"></my-input>

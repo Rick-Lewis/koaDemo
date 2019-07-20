@@ -3,7 +3,7 @@
 */
 <template>
     <button v-on:click="$emit('my-click', test)" type="button" class="button-container">
-        <slot></slot>
+        <slot />
     </button>
 </template>
 

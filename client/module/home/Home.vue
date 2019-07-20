@@ -5,7 +5,7 @@
     <div class="home-container">
         <my-navigator class="my-navigator-container"></my-navigator>
         <my-carousel class="my-carousel-container">
-            <my-carousel-item v-for="item in bannerList" class="my-carousel-item-container">
+            <my-carousel-item v-for="(item, index) in bannerList" v-bind:key="index" class="my-carousel-item-container">
                 <img :src="item"/>
             </my-carousel-item>
         </my-carousel>
@@ -21,9 +21,9 @@
   import homeStore from '../../store/home';
   import Carousel from '../../components/Carousel';
   import CarouselItem from '../../components/CarouselItem';
-  import Navigator from '../../components/Navigator';
+  import Navigator from './navigator/Navigator';
   import Drawer from '../../components/Drawer';
-  import Login from '../../module/login/Login';
+  import Login from './login/Login';
 
   import kidsPic from '../../public/images/kids.png';
   import loversPic from '../../public/images/lovers.png';
@@ -83,8 +83,6 @@
                 }
             }
         }
-        .my-drawer-container {
-
-        }
+        // .my-drawer-container {}
     }
 </style>

@@ -5,7 +5,7 @@
     <div class="drawer-container" v-bind:class="extendClass">
         <div class="hook-container" v-on:click="handleHookClick"></div>
         <div class="content-container">
-            <slot></slot>
+            <slot />
         </div>
     </div>
 </template>
