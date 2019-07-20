@@ -1,6 +1,10 @@
-/**
-* Created by xu.long on 2019/7/13.
-*/
+/*
+ * @Author: xu.long 
+ * @Date: 2019-07-20 17:20:22 
+ * @Last Modified by:   xu.long 
+ * @Last Modified time: 2019-07-20 17:20:22 
+ */
+
 <template>
     <div class="carousel-item">
         <slot />

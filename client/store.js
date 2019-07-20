@@ -1,6 +1,10 @@
-/**
- * Created by xu.long on 2019/6/9.
+/*
+ * @Author: xu.long 
+ * @Date: 2019-07-20 17:22:08 
+ * @Last Modified by:   xu.long 
+ * @Last Modified time: 2019-07-20 17:22:08 
  */
+
 import Vue from 'vue';
 import Vuex from 'vuex';
 

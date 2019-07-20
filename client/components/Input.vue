@@ -1,6 +1,10 @@
-/**
-* Created by xu.long on 2019/7/14.
-*/
+/*
+ * @Author: xu.long 
+ * @Date: 2019-07-20 17:20:32 
+ * @Last Modified by:   xu.long 
+ * @Last Modified time: 2019-07-20 17:20:32 
+ */
+
 <template>
     <input v-bind:placeholder="placeholder" class="input-container"/>
 </template>

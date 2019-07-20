@@ -1,6 +1,10 @@
-/**
- * Created by xu.long on 2019/5/19.
+/*
+ * @Author: xu.long 
+ * @Date: 2019-07-20 17:21:44 
+ * @Last Modified by: xu.long
+ * @Last Modified time: 2019-07-20 17:22:32
  */
+
 import Vue from 'vue';
 import App from './App.vue';
 import { createRouter } from './router';

@@ -1,6 +1,10 @@
-/**
-* Created by xu.long on 2019/6/9.
-*/
+/*
+ * @Author: xu.long 
+ * @Date: 2019-07-20 17:21:51 
+ * @Last Modified by: xu.long
+ * @Last Modified time: 2019-07-20 17:22:31
+ */
+
 <template>
     <div id="app">
         <router-view></router-view>

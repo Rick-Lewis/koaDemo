@@ -1,6 +1,10 @@
-/**
-* Created by xu.long on 2019/7/14.
-*/
+/*
+ * @Author: xu.long 
+ * @Date: 2019-07-20 17:20:27 
+ * @Last Modified by:   xu.long 
+ * @Last Modified time: 2019-07-20 17:20:27 
+ */
+
 <template>
     <div class="drawer-container" v-bind:class="extendClass">
         <div class="hook-container" v-on:click="handleHookClick"></div>

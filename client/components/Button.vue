@@ -1,6 +1,10 @@
-/**
-* Created by xu.long on 2019/7/14.
-*/
+/*
+ * @Author: xu.long 
+ * @Date: 2019-07-20 17:20:11 
+ * @Last Modified by:   xu.long 
+ * @Last Modified time: 2019-07-20 17:20:11 
+ */
+
 <template>
     <button v-on:click="$emit('my-click', test)" type="button" class="button-container">
         <slot />

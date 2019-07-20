@@ -1,6 +1,10 @@
-/**
- * Created by xu.long on 2019/6/9.
+/*
+ * @Author: xu.long 
+ * @Date: 2019-07-20 17:21:28 
+ * @Last Modified by: xu.long
+ * @Last Modified time: 2019-07-20 17:22:35
  */
+
 export default {
   namespaced: true,
   // 重要信息：state 必须是一个函数，
