@@ -2,22 +2,28 @@
  * @Author: xu.long 
  * @Date: 2019-07-20 17:21:03 
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-20 17:23:03
+ * @Last Modified time: 2019-07-21 18:56:43
  */
 
 <template>
     <div class="home-container">
         <my-navigator class="my-navigator-container"></my-navigator>
-        <my-carousel class="my-carousel-container">
-            <my-carousel-item v-for="(item, index) in bannerList" v-bind:key="index" class="my-carousel-item-container">
+        <carousel class="my-carousel-container">
+            <carousel-item v-for="(item, index) in bannerList" v-bind:key="index" class="my-carousel-item-container">
                 <img :src="item"/>
-            </my-carousel-item>
-        </my-carousel>
-        <my-drawer class="my-drawer-container">
+            </carousel-item>
+        </carousel>
+        <drawer class="my-drawer-container">
             <template v-if="targetElement === 'login'">
-                <login></login>
+                <my-login v-on:my-register="setDrawerStatus" v-on:my-find-password="findPassword" @my-login="login"></my-login>
             </template>
-        </my-drawer>
+            <template v-else-if="targetElement === 'register'">
+                <my-register v-on:my-login="setDrawerStatus"></my-register>
+            </template>
+            <template v-else-if="targetElement === 'userCenter'">
+                <my-user-center></my-user-center>
+            </template>
+        </drawer>
     </div>
 </template>
 
@@ -28,18 +34,23 @@
   import Navigator from './navigator/Navigator';
   import Drawer from '../../components/Drawer';
   import Login from './login/Login';
+  import Register from './register/Register';
+  import UserCenter from './userCenter/UserCenter';
 
   import kidsPic from '../../public/images/kids.png';
   import loversPic from '../../public/images/lovers.png';
   import parentsPic from '../../public/images/parents.png';
 
   export default {
+    //纯组件用中划线声明，命名不带‘my’；业务container用中划线声明，命名带‘my’
     components: {
-      'my-carousel': Carousel,
-      'my-carousel-item': CarouselItem,
+      'carousel': Carousel,
+      'carousel-item': CarouselItem,
       'my-navigator': Navigator,
-      'my-drawer': Drawer,
-      'login': Login
+      'drawer': Drawer,
+      'my-login': Login,
+      'my-register': Register,
+      'my-user-center': UserCenter
     },
     data(){
       return {
@@ -65,7 +76,26 @@
       this.$store.unregisterModule('home');
     },
     computed: {},
-    methods: {}
+    methods: {
+      //忘记密码
+      findPassword: function() {
+        console.log('Home methods findPassword');
+      },
+      //登陆
+      login: function() {
+        console.log('Home methods login');
+        this.setDrawerStatus('userCenter');
+      },
+      //注册
+      signIn: function() {
+        console.log('Home methods signIn');
+      },
+      //设置右边抽屉里面的展示内容
+      setDrawerStatus: function(val){
+        console.log('Home methods setStatus', val);
+        this.targetElement = val;
+      }
+    }
   }
 </script>
 

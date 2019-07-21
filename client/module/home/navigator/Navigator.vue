@@ -1,15 +1,15 @@
 /*
  * @Author: xu.long 
  * @Date: 2019-07-20 17:20:50 
- * @Last Modified by:   xu.long 
- * @Last Modified time: 2019-07-20 17:20:50 
+ * @Last Modified by: xu.long
+ * @Last Modified time: 2019-07-21 12:07:48
  */
 
 <template>
     <header class="navigator-container">
         <div class="logo-container">
             <img :src="logoUrl"/>
-            <span>尤为</span>
+            <span>尤为YouWe</span>
         </div>
         <nav>
             <ul>
@@ -23,7 +23,7 @@
 </template>
 
 <script>
-  import logoPic from '../public/images/logo.png';
+  import logoPic from '../../../public/images/logo.png';
 
   export default {
     name: 'Navigator',
@@ -47,14 +47,14 @@
         background-color: #fff;
         .logo-container{
             display: flex;
-            align-items: center;
+            align-items: flex-end;
             img{
                 width: 4.4rem;
                 height: 4.4rem;
             }
             span{
-                font-size: 3rem;
-                margin-left: 1px;
+                font-size: 2rem;
+                margin-bottom: -5px;
             }
         }
         nav{

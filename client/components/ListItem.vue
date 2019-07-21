@@ -6,7 +6,9 @@
  */
  
 <template>
-    <div></div>
+    <div class="list-item-container">
+        <slot />
+    </div>
 </template>
 <script>
     export default {
