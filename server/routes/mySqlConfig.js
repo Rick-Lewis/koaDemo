@@ -32,7 +32,7 @@ module.exports = {
     return this.query(temp);
   },
   createUser: function (param) {
-    let temp = `insert into user(nickName, sex, birthday) values ('${param.nickName}', ${param.sex}, '1990-07-25')`;
+    let temp = `insert into user(username, phone) values ('${param.username}', ${param.phone})`;
     console.log(temp);
     return this.query(temp);
   }

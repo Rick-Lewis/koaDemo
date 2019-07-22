@@ -2,7 +2,7 @@
  * @Author: xu.long 
  * @Date: 2019-07-20 17:21:03 
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-21 18:56:43
+ * @Last Modified time: 2019-07-22 20:16:46
  */
 
 <template>
@@ -18,7 +18,7 @@
                 <my-login v-on:my-register="setDrawerStatus" v-on:my-find-password="findPassword" @my-login="login"></my-login>
             </template>
             <template v-else-if="targetElement === 'register'">
-                <my-register v-on:my-login="setDrawerStatus"></my-register>
+                <my-register v-on:my-register="signIn" v-on:my-login="setDrawerStatus"></my-register>
             </template>
             <template v-else-if="targetElement === 'userCenter'">
                 <my-user-center></my-user-center>
@@ -89,6 +89,7 @@
       //注册
       signIn: function() {
         console.log('Home methods signIn');
+        this.setDrawerStatus('userCenter');
       },
       //设置右边抽屉里面的展示内容
       setDrawerStatus: function(val){

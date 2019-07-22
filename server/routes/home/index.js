@@ -5,7 +5,7 @@ const Router = require('koa-router');
 const operator = require('../mySqlConfig');
 
 const login = module.exports = new Router({
-  prefix: '/login'
+  prefix: '/home'
 });
 
 login.get('/retrieve/:id', async (ctx, next) => {
@@ -15,7 +15,7 @@ login.get('/retrieve/:id', async (ctx, next) => {
 }).post('/create', async (ctx, next) => {
   // ctx.router available
   console.log('router create', ctx.request.body);
-  ctx.body = await operator.createUser(ctx.request.body[0]);
+  ctx.body = await operator.createUser(ctx.request.body);
   // ctx.status = 200;
   // ctx.body = {
   //   code: 0,

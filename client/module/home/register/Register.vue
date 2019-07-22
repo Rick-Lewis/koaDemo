@@ -2,7 +2,7 @@
  * @Author: xu.long 
  * @Date: 2019-07-20 17:20:57 
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-21 17:56:31
+ * @Last Modified time: 2019-07-22 21:19:41
  */
 
 <template>
@@ -11,10 +11,23 @@
       <span>尤为YouWe</span>
     </div>
     <div class="my-input-container">
-      <my-input placeholder="您的手机号"></my-input>
+      <my-input
+        placeholder="您的姓名"
+        v-bind:value="username"
+        @input="handleInputChange('username', $event)"
+      ></my-input>
+      <my-input
+        style="margin-top: 1rem;"
+        placeholder="您的手机号"
+        v-bind:value="phone"
+        @input="handleInputChange('phone', $event)"
+      ></my-input>
     </div>
     <div class="protocol-container">
-      <span>注册表示您同意<a>《尤为YouWe用户使用协议》</a></span>
+      <span>
+        注册表示您同意
+        <a>《尤为YouWe用户使用协议》</a>
+      </span>
     </div>
     <div class="my-btn-container">
       <my-button v-on:my-click="handleRegisterClick">立即注册</my-button>
@@ -31,20 +44,60 @@ import Input from "../../../components/Input";
 import Button from "../../../components/Button";
 export default {
   name: "Register",
+  data() {
+    return {
+      username: "",
+      phone: ""
+    };
+  },
   components: {
     "my-input": Input,
     "my-button": Button
   },
   methods: {
-    handleRegisterClick: function(){
-      console.log('Register methods handleRegisterClick');
+    handleRegisterClick: function() {
+      console.log("Register.vue methods handleRegisterClick");
+      if (!!this.username && !!this.phone) {
+        let urlTemp = this.global_.path.baseUrl + "/home/create";
+        this.axios
+          .post(urlTemp, {
+            username: this.username,
+            phone: this.phone
+          })
+          .then(
+            res => {
+              console.log(
+                "Register.vue handleRegisterClick axios /home/create success",
+                res
+              );
+              this.$emit("my-register");
+            },
+            err => {
+              console.log(
+                "Register.vue handleRegisterClick axios /home/create failure",
+                err
+              );
+            }
+          );
+      } else {
+        console.log("username or phone is empty");
+      }
+    },
+    handleInputChange: function(key, val) {
+      console.log("Register.vue methods handleInputChange", key, val);
+      if (key === "username") {
+        this.username = val;
+      } else if (key === "phone") {
+        this.phone = val;
+      }
+      console.log("Register.vue methods handleInputChange", this.username, this.phone);
     }
   }
 };
 </script>
 
 <style lang="scss">
-.register-container{
+.register-container {
   width: 37rem;
   background-color: #fff;
   margin: 0 auto;
