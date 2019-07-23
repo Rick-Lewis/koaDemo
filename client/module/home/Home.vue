@@ -2,7 +2,7 @@
  * @Author: xu.long 
  * @Date: 2019-07-20 17:21:03 
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-22 20:16:46
+ * @Last Modified time: 2019-07-23 21:32:15
  */
 
 <template>
@@ -84,17 +84,12 @@
       //登陆
       login: function() {
         console.log('Home methods login');
-        this.setDrawerStatus('userCenter');
+        this.targetElement = 'userCenter';
       },
       //注册
       signIn: function() {
         console.log('Home methods signIn');
-        this.setDrawerStatus('userCenter');
-      },
-      //设置右边抽屉里面的展示内容
-      setDrawerStatus: function(val){
-        console.log('Home methods setStatus', val);
-        this.targetElement = val;
+        this.targetElement = 'userCenter';
       }
     }
   }

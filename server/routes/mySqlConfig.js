@@ -17,9 +17,13 @@ module.exports = {
         } else {
           connection.query(sql, values, (err, rows) => {
             if (err) {
-              reject(err)
+              err.code = -1;
+              err.message = 'failure'
+              reject(err);
             } else {
-              resolve(rows)
+              rows.code = 0;
+              rows.message = 'success';
+              resolve(rows);
             }
             connection.release();
           })
@@ -32,7 +36,7 @@ module.exports = {
     return this.query(temp);
   },
   createUser: function (param) {
-    let temp = `insert into user(username, phone) values ('${param.username}', ${param.phone})`;
+    let temp = `insert into user(username, password, phone) values ('${param.username}', '${param.password}', '${param.phone}')`;
     console.log(temp);
     return this.query(temp);
   }

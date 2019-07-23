@@ -2,7 +2,7 @@
  * @Author: xu.long 
  * @Date: 2019-07-20 17:20:57 
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-22 21:19:41
+ * @Last Modified time: 2019-07-23 21:29:33
  */
 
 <template>
@@ -15,6 +15,13 @@
         placeholder="您的姓名"
         v-bind:value="username"
         @input="handleInputChange('username', $event)"
+      ></my-input>
+      <my-input
+        style="margin-top: 1rem;"
+        placeholder="您的密码"
+        type="password"
+        v-bind:value="password"
+        @input="handleInputChange('password', $event)"
       ></my-input>
       <my-input
         style="margin-top: 1rem;"
@@ -47,6 +54,7 @@ export default {
   data() {
     return {
       username: "",
+      password: "",
       phone: ""
     };
   },
@@ -62,6 +70,7 @@ export default {
         this.axios
           .post(urlTemp, {
             username: this.username,
+            password: this.password,
             phone: this.phone
           })
           .then(
@@ -89,8 +98,14 @@ export default {
         this.username = val;
       } else if (key === "phone") {
         this.phone = val;
+      } else if (key === "password") {
+        this.password = val;
       }
-      console.log("Register.vue methods handleInputChange", this.username, this.phone);
+      console.log(
+        "Register.vue methods handleInputChange",
+        this.username,
+        this.phone
+      );
     }
   }
 };
