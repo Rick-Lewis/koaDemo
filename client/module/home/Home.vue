@@ -2,7 +2,7 @@
  * @Author: xu.long 
  * @Date: 2019-07-20 17:21:03 
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-23 21:32:15
+ * @Last Modified time: 2019-07-28 14:28:30
  */
 
 <template>
@@ -31,7 +31,7 @@
   import homeStore from '../../store/home';
   import Carousel from '../../components/Carousel';
   import CarouselItem from '../../components/CarouselItem';
-  import Navigator from './navigator/Navigator';
+  import Navigator from '../common/navigator/Navigator';
   import Drawer from '../../components/Drawer';
   import Login from './login/Login';
   import Register from './register/Register';
@@ -55,8 +55,8 @@
     data(){
       return {
         bannerList: [
-          loversPic,
           kidsPic,
+          loversPic,
           parentsPic
         ],
         targetElement: 'login'
@@ -84,12 +84,17 @@
       //登陆
       login: function() {
         console.log('Home methods login');
-        this.targetElement = 'userCenter';
+        this.setDrawerStatus('userCenter');
       },
       //注册
       signIn: function() {
         console.log('Home methods signIn');
-        this.targetElement = 'userCenter';
+        this.setDrawerStatus('userCenter');
+      },
+      //route
+      setDrawerStatus: function(val){
+        console.log('Home methods signIn');
+        this.targetElement = val;
       }
     }
   }

@@ -2,7 +2,7 @@
  * @Author: xu.long 
  * @Date: 2019-07-20 17:20:50 
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-21 12:07:48
+ * @Last Modified time: 2019-07-28 14:34:34
  */
 
 <template>
@@ -14,9 +14,9 @@
         <nav>
             <ul>
                 <li><router-link to="/index">首页</router-link></li>
-                <li><router-link to="/bar">关于我们</router-link></li>
-                <li><router-link to="/bar">加入我们</router-link></li>
-                <li><router-link to="/bar">给点建议</router-link></li>
+                <li><router-link to="/about">关于我们</router-link></li>
+                <li><router-link to="/add">加入我们</router-link></li>
+                <li><router-link to="/advice">给点建议</router-link></li>
             </ul>
         </nav>
     </header>

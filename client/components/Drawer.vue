@@ -54,7 +54,7 @@ $navHeight: 6.4rem; //navigator的高度
     bottom: 0;
     left: -2rem;
     margin: auto 0;
-    background-color: #000;
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 3px 0px 0px 3px;
   }
   .content-container {
