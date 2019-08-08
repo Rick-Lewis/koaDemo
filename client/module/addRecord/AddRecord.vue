@@ -2,7 +2,7 @@
  * @Author: xu.long  
  * @Date: 2019-07-28 14:33:34  
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-29 10:34:08
+ * @Last Modified time: 2019-08-07 15:08:30
  */
 <template>
   <div class="add-record-container">
@@ -31,7 +31,6 @@ export default {
 .add-record-container {
   position: relative;
   height: 100vh;
-  $navHeight: 6.4rem; //navigator的高度
   .my-navigator-container {
     position: fixed;
     left: 0;

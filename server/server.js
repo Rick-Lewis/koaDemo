@@ -7,40 +7,18 @@ const bodyParser = require('koa-bodyparser');
 const Router = require('koa-router');
 const fs = require('fs');
 const koaStatic = require('koa-static');
-const { createBundleRenderer } = require('vue-server-renderer');
 const login = require('./routes/home/index');
-const template = fs.readFileSync(path.resolve(__dirname, '../dist/index.ssr.html'), 'utf-8');
-const serverBundle = require(path.resolve(__dirname, '../dist/vue-ssr-server-bundle.json'));
-const clientManifest = require(path.resolve(__dirname,'../dist/vue-ssr-client-manifest.json'));
-
+const staticPage = require('./routes/staticPage/index');
 /**
  * 服务器ssr服务和服务器api服务
  */
 const server = new Koa();
 const router = new Router();
-const renderer = createBundleRenderer(serverBundle, {
-  runInNewContext: false, // 推荐
-  template, // （可选）页面模板
-  clientManifest // （可选）客户端构建 manifest
-});
-router.get('/index', (ctx, next) => {
-  console.log('server router.get');
-  const context = {
-    title: '服务端渲染', // {{title}}
-    url: ctx.url
-  };
-  return renderer.renderToString(context).then(res => {
-    console.log('server router.get renderer.renderToString success', res);
-    ctx.body = res;
-    return next();
-  }, err => {
-    console.log('server router.get renderer.renderToString failure', err);
-  });
-});
+
 //处理post请求，注意加载顺序要提前加载
 server.use(bodyParser());
 //加载路由中间件
-server.use(router.routes()).use(router.allowedMethods()).use(login.routes());
+server.use(router.routes()).use(router.allowedMethods()).use(login.routes()).use(staticPage.routes());
 // 配置静态web服务的中间件
 server.use(koaStatic(path.resolve(__dirname, '../dist')));
 

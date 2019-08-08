@@ -2,7 +2,7 @@
  * @Author: xu.long 
  * @Date: 2019-07-20 17:21:03 
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-31 16:10:21
+ * @Last Modified time: 2019-08-07 15:08:28
  */
 
 <template>
@@ -60,9 +60,7 @@ export default {
 <style lang="scss">
 .home-container {
   height: 100vh;
-  $navHeight: 6.4rem; //navigator的高度
   .my-carousel-container {
-    padding-top: $navHeight;
     .my-carousel-item-container {
       img {
         width: 100%;

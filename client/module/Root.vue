@@ -2,7 +2,7 @@
  * @Author: xu.long  
  * @Date: 2019-07-31 15:54:42  
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-31 16:10:23
+ * @Last Modified time: 2019-08-07 15:08:31
  */
 <template>
   <div class="root-container">
@@ -22,7 +22,9 @@
         <my-user-center></my-user-center>
       </template>
     </drawer>
-    <router-view></router-view>
+    <div class="router-container">
+      <router-view></router-view>
+    </div>
   </div>
 </template>
 <script>
@@ -78,6 +80,10 @@ export default {
     left: 0;
     top: 0;
     z-index: 11;
+  }
+  $navHeight: 6.4rem; //navigator的高度
+  .router-container{
+    padding-top: $navHeight;
   }
   // .my-drawer-container {}
 }

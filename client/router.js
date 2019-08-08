@@ -2,7 +2,7 @@
  * @Author: xu.long
  * @Date: 2019-07-20 17:22:04
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-07-31 19:43:37
+ * @Last Modified time: 2019-08-06 17:29:55
  */
 
 import Vue from "vue";
@@ -15,10 +15,11 @@ export function createRouter() {
     mode: "history",
     routes: [
       {
-        path: "/root",
+        path: "/staticPage",
         component: () => import("./module/Root.vue"),
         children: [
-          { path: "index", component: () => import("./module/home/Home.vue") },
+          { path: "", component: () => import("./module/home/Home.vue") },
+          { path: "home", component: () => import("./module/home/Home.vue") },
           {
             path: "addRecord",
             component: () => import("./module/addRecord/AddRecord.vue")
