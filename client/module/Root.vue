@@ -2,7 +2,7 @@
  * @Author: xu.long  
  * @Date: 2019-07-31 15:54:42  
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-08-07 15:08:31
+ * @Last Modified time: 2019-08-09 10:46:22
  */
 <template>
   <div class="root-container">
@@ -85,6 +85,8 @@ export default {
   .router-container{
     padding-top: $navHeight;
   }
-  // .my-drawer-container {}
+  .my-drawer-container {
+    z-index: 11;
+  }
 }
 </style>

@@ -2,18 +2,20 @@
  * @Author: xu.long  
  * @Date: 2019-07-28 14:33:34  
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-08-07 15:08:30
+ * @Last Modified time: 2019-08-09 14:05:01
  */
 <template>
   <div class="add-record-container">
-    <my-navigator class="my-navigator-container"></my-navigator>
     <div class="title-input-container">
       <input placeholder="填写传记标题" />
     </div>
-    <div class="content-input-container"></div>
+    <div class="content-input-container">
+      <!-- <ckeditor :editor="editor" v-model="editorData" :config="editorConfig"></ckeditor> -->
+    </div>
   </div>
 </template>
 <script>
+// import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 import Navigator from "../common/navigator/Navigator";
 export default {
   name: "AddRecord",
@@ -22,7 +24,11 @@ export default {
   },
   data() {
     return {
-      a: ""
+      // editor: ClassicEditor,
+      // editorData: "<p>Content of the editor.</p>",
+      // editorConfig: {
+      //   // The configuration of the editor.
+      // }
     };
   }
 };
@@ -30,7 +36,9 @@ export default {
 <style lang="scss">
 .add-record-container {
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 6.4rem);
+  background: url("../../public/images/page_bg.jpg") no-repeat;
+  background-size: 100% 100%;
   .my-navigator-container {
     position: fixed;
     left: 0;
@@ -60,6 +68,7 @@ export default {
       border: 0;
       color: #666;
       float: left;
+      outline: none;
     }
   }
 }

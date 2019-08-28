@@ -2,7 +2,7 @@
  * @Author: xu.long
  * @Date: 2019-08-07 15:12:47
  * @Last Modified by: xu.long
- * @Last Modified time: 2019-08-08 15:44:02
+ * @Last Modified time: 2019-08-09 14:02:20
  */
 const fs = require("fs");
 const path = require("path");
@@ -41,10 +41,6 @@ const renderHtmlTemp = async (ctx, next) => {
     let result = await new Promise((resolve, reject) => {
       renderer.renderToString(context).then(
         res => {
-          console.log(
-            "staticPage router.get renderer.renderToString success",
-            res
-          );
           let temp = {
             type: "html",
             status: 200,
@@ -53,10 +49,6 @@ const renderHtmlTemp = async (ctx, next) => {
           resolve(temp);
         },
         err => {
-          console.log(
-            "staticPage router.get renderer.renderToString failure",
-            JSON.stringify(err)
-          );
           let temp = {
             type: "html",
             status: 500,
@@ -66,6 +58,10 @@ const renderHtmlTemp = async (ctx, next) => {
         }
       );
     });
+    console.log(
+      "staticPage router.get renderer.renderToString result",
+      JSON.stringify(result)
+    );
     ctx.type = result.type;
     ctx.status = result.status;
     ctx.body = result.body;

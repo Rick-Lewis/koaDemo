@@ -33,8 +33,15 @@ if (!module.parent) {
  */
 const clientTemplate = fs.readFileSync(path.resolve(__dirname, '../dist/index.html'), 'utf-8');
 const client = new Koa(); // pure client render
-const clientRouter = new Router();
-clientRouter.get('/index', (ctx, next) => {
+const clientRouter = new Router({
+  prefix: "/staticPage"
+});
+clientRouter.get('/home', (ctx, next) => {
+  ctx.type = 'html';
+  ctx.status = 200;
+  ctx.body = clientTemplate;
+});
+clientRouter.get('/addRecord', (ctx, next) => {
   ctx.type = 'html';
   ctx.status = 200;
   ctx.body = clientTemplate;
